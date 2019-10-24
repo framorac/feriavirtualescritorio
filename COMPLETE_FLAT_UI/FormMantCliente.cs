@@ -21,6 +21,7 @@ namespace COMPLETE_FLAT_UI
         {
             InitializeComponent();
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -50,15 +51,38 @@ namespace COMPLETE_FLAT_UI
             {
                 cbTipoUsuario.Items.Add(item);
             }
+
             cbTipoUsuario.DisplayMember = "Descripcion";
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             var perfil = cbTipoUsuario.SelectedItem as ServicioPerfiles.Perfiles;
-            
-            serviciosUsuarios.InsertUsuario(txtUsuario.Text, txtContraseña.Text, perfil.Id_perfil, txtNombre.Text, txtApellido.Text, txtCorreo.Text, DateTime.Now);
-           
+
+            if (ValidarFormularioVacio() == false)
+            {
+                serviciosUsuarios.InsertUsuario(txtUsuario.Text, txtContraseña.Text, perfil.Id_perfil, txtNombre.Text, txtApellido.Text, txtCorreo.Text, DateTime.Now);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, rellene todos los campos antes de guardar.");
+            }
+        }
+
+        private Boolean ValidarFormularioVacio()
+        {
+            Boolean flag = false;
+
+            if (txtUsuario.Text.Equals("") || txtContraseña.Text.Equals("") || txtNombre.Text.Equals("") || txtApellido.Text.Equals("") || txtCorreo.Text.Equals("") || cbTipoUsuario.SelectedItem == null)
+            {
+                flag = true;
+            }
+            else
+            {
+                flag = false;
+            }
+
+            return flag;
         }
 
     }

@@ -18,12 +18,12 @@ namespace SignUpDemo
             InitializeComponent();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void lblCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
             COMPLETE_FLAT_UI.ServiciosUsuarios.UsuariosClient serviciosUsuarios = new COMPLETE_FLAT_UI.ServiciosUsuarios.UsuariosClient();
 
@@ -63,9 +63,7 @@ namespace SignUpDemo
             catch (Exception ex)
             {
                 MessageBox.Show("No se ha podido conectar con el servidor, por favor, vuelva a intentarlo más tarde." + ex);
-                //MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

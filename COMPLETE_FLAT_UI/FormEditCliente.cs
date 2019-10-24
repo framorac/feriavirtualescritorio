@@ -19,10 +19,6 @@ namespace COMPLETE_FLAT_UI
             InitializeComponent();
         }
 
-        private void FormEditClientes_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
