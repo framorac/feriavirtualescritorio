@@ -30,11 +30,11 @@
         {
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.BtnCerrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.BtnCerrar = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,21 @@
             this.label6.Size = new System.Drawing.Size(130, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Eliminar usuario";
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrar.FlatAppearance.BorderSize = 0;
+            this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrar.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Close;
+            this.BtnCerrar.Location = new System.Drawing.Point(345, 0);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(51, 47);
+            this.BtnCerrar.TabIndex = 4;
+            this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // btnCancelar
             // 
@@ -115,21 +130,6 @@
             this.lblID.TabIndex = 37;
             this.lblID.Text = "ID:";
             // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCerrar.FlatAppearance.BorderSize = 0;
-            this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCerrar.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Close;
-            this.BtnCerrar.Location = new System.Drawing.Point(345, 0);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(51, 47);
-            this.BtnCerrar.TabIndex = 4;
-            this.BtnCerrar.UseVisualStyleBackColor = true;
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
             // FormElimCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,7 +140,9 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.BarraTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormElimCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormElimCliente";
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
