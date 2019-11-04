@@ -55,13 +55,14 @@ namespace COMPLETE_FLAT_UI
             cbTipoUsuario.DisplayMember = "Descripcion";
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             var perfil = cbTipoUsuario.SelectedItem as ServicioPerfiles.Perfiles;
 
             if (ValidarFormularioVacio() == false)
             {
                 serviciosUsuarios.InsertUsuario(txtUsuario.Text, txtContraseña.Text, perfil.Id_perfil, txtNombre.Text, txtApellido.Text, txtCorreo.Text, DateTime.Now);
+                FormListaClientes fm = new FormListaClientes();
             }
             else
             {
@@ -84,6 +85,5 @@ namespace COMPLETE_FLAT_UI
 
             return flag;
         }
-
     }
 }

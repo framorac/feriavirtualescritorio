@@ -47,11 +47,7 @@ namespace COMPLETE_FLAT_UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var idUsuario = Convert.ToInt32(txtUsuario.Text);
-            var date1 = Convert.ToDateTime(dateTimePicker1.Text);
-            var date2 = Convert.ToDateTime(dateTimePicker2.Text);
-            servicesContratos.InsertContrato(idUsuario, date1, date2);
-            MessageBox.Show("Contrato ingresado");
+            servicesContratos.InsertContrato(Convert.ToInt32(txtUsuario.Text), Convert.ToDateTime(dtpFechaInicio.Value.ToString("dd/MM/yyyy")), Convert.ToDateTime(dtpFechaFin.Value.ToString("dd/MM/yyyy")));
         }
     }
 }
