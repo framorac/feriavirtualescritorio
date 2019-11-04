@@ -18,7 +18,9 @@ namespace COMPLETE_FLAT_UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new Login());
+            Login formLogin = new Login();
+            formLogin.Show();
+            Application.Run();
         }
     }
 }

@@ -49,11 +49,13 @@ namespace COMPLETE_FLAT_UI
                 frm.txtTipoUsuario.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 frm.txtFechaCreacion.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
-                frm.ShowDialog();
-             
+                frm.Show();
+
             }
             else
+            {
                 MessageBox.Show("seleccione una fila por favor");
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -97,11 +99,6 @@ namespace COMPLETE_FLAT_UI
             int ID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[7].Value);
             frm.ShowDialog();
             serviciosUsuarios.DeleteUsuario(ID);
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

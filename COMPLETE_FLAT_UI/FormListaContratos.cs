@@ -23,11 +23,6 @@ namespace COMPLETE_FLAT_UI
             this.Close();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             FormMantContrato frm = new FormMantContrato();
@@ -48,6 +43,41 @@ namespace COMPLETE_FLAT_UI
             dataGridView1.Columns[3].HeaderText = "ID Usuario";
             dataGridView1.Columns[0].HeaderText = "Fecha Inicio";
             dataGridView1.Columns[1].HeaderText = "Fecha Termino";
+        }
+
+        private void BtnEliminarContrato_Click(object sender, EventArgs e)
+        {
+            FormElimContratos frm = new FormElimContratos();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                frm.txtID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void BtnEditarContrato_Click(object sender, EventArgs e)
+        {
+            FormEditContrato frm = new FormEditContrato();
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                frm.txtUsuario.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void BtnAgregarContrato_Click(object sender, EventArgs e)
+        {
+            FormMantContrato frm = new FormMantContrato();
+            frm.Show();
         }
     }
 }

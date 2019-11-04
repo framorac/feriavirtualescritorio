@@ -50,7 +50,8 @@ namespace SignUpDemo
                     if (resultado.ToLower().Equals("true"))
                     {
                         FormMenuPrincipal frm = new FormMenuPrincipal();
-                        frm.ShowDialog();
+                        frm.Show();
+                        this.Close();
 
                     }
                     else

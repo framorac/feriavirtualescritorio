@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace COMPLETE_FLAT_UI
 {
-    public partial class FormElimCliente : Form
+    public partial class FormElimContratos : Form
     {
-        ServiciosUsuarios.UsuariosClient serviciosUsuarios = new ServiciosUsuarios.UsuariosClient();
-        public FormElimCliente()
+        ServicioContratos.ServiceContratosClient serviciosContratos = new ServicioContratos.ServiceContratosClient();
+        public FormElimContratos()
         {
             InitializeComponent();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            serviciosContratos.DeleteContrato(Convert.ToInt32(txtID.Text));
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            serviciosUsuarios.DeleteUsuario(Convert.ToInt32(txtID.Text));
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

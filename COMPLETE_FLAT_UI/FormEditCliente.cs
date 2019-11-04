@@ -19,14 +19,12 @@ namespace COMPLETE_FLAT_UI
             InitializeComponent();
         }
 
-
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             //int id, string username, string password, int fk_perfil, string nombre
             //string apellido, string email, DateTime fecha
             string perfil = txtTipoUsuario.Text;
             
-
             switch (perfil)
             {
                 case "admin":
@@ -54,9 +52,10 @@ namespace COMPLETE_FLAT_UI
                     id = 0;
                     break;
             }
-           
-            serviciosUsuarios.UpdateUsuario(Convert.ToInt32(txtID.Text), txtUsuario.Text,txtContraseña.Text, id, txtNombre.Text,
+
+            serviciosUsuarios.UpdateUsuario(Convert.ToInt32(txtID.Text), txtUsuario.Text, txtContraseña.Text, id, txtNombre.Text,
                                             txtApellido.Text, txtCorreo.Text, Convert.ToDateTime(txtFechaCreacion.Text));
+            
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

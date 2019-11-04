@@ -94,23 +94,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEditCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEditCliente.Designer.cs">
       <DependentUpon>FormEditCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormEditContrato.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEditContrato.Designer.cs">
-      <DependentUpon>FormEditContrato.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditVentaExterna.cs">
       <SubType>Form</SubType>
@@ -123,12 +111,6 @@
     </Compile>
     <Compile Include="FormElimCliente.Designer.cs">
       <DependentUpon>FormElimCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormElimContratos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormElimContratos.Designer.cs">
-      <DependentUpon>FormElimContratos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormListaClientes.cs">
       <SubType>Form</SubType>
@@ -192,23 +174,14 @@
     <Compile Include="test\FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormEditCliente.resx">
       <DependentUpon>FormEditCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormEditContrato.resx">
-      <DependentUpon>FormEditContrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditVentaExterna.resx">
       <DependentUpon>FormEditVentaExterna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormElimCliente.resx">
       <DependentUpon>FormElimCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormElimContratos.resx">
-      <DependentUpon>FormElimContratos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaClientes.resx">
       <DependentUpon>FormListaClientes.cs</DependentUpon>

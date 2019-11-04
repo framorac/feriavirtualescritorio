@@ -12,6 +12,7 @@ namespace COMPLETE_FLAT_UI
 {
     public partial class FormListaVentaExterna : Form
     {
+        
         public FormListaVentaExterna()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace COMPLETE_FLAT_UI
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             FormEditVentaExterna frm = new FormEditVentaExterna();
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 //frm..Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -41,5 +43,7 @@ namespace COMPLETE_FLAT_UI
             else
                 MessageBox.Show("seleccione una fila por favor");
         }
+
+        
     }
 }
