@@ -220,21 +220,16 @@ namespace COMPLETE_FLAT_UI
             AbrirFormEnPanel(fm);
         }
 
-        private void PanelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        private void btnProcesoOferta_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnVentaInterna_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormListaOfertas fm = new FormListaOfertas();
+            FormListaOfertasEnProceso fm = new FormListaOfertasEnProceso();
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(fm);
+        }
+
+        private void PictureBox5_Click(object sender, EventArgs e)
+        {
+
         }
 
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------

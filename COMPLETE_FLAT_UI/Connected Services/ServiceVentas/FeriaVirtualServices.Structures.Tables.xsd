@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ventas" nillable="true" type="tns:Ventas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVentas" nillable="true" type="tns:ArrayOfVentas" />
+  <xs:complexType name="Ventas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="tipoVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ventas" nillable="true" type="tns:Ventas" />
+  <xs:complexType name="ArrayOfHistoricoEstadoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricoEstadoVentas" nillable="true" type="tns:HistoricoEstadoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricoEstadoVentas" nillable="true" type="tns:ArrayOfHistoricoEstadoVentas" />
+  <xs:complexType name="HistoricoEstadoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_venta" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoEstado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricoEstadoVentas" nillable="true" type="tns:HistoricoEstadoVentas" />
+  <xs:complexType name="ArrayOfVentaCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VentaCompleta" nillable="true" type="tns:VentaCompleta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVentaCompleta" nillable="true" type="tns:ArrayOfVentaCompleta" />
+  <xs:complexType name="VentaCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VentaCompleta" nillable="true" type="tns:VentaCompleta" />
+</xs:schema>
