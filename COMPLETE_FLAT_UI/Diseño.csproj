@@ -74,6 +74,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceVentas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServicioContratos\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,17 +141,17 @@
     <Compile Include="FormListaClientes.designer.cs">
       <DependentUpon>FormListaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaOfertas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormListaOfertas.Designer.cs">
-      <DependentUpon>FormListaOfertas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormListaContratos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListaContratos.Designer.cs">
       <DependentUpon>FormListaContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaOfertasEnProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaOfertasEnProceso.Designer.cs">
+      <DependentUpon>FormListaOfertasEnProceso.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogo.cs">
       <SubType>Form</SubType>
@@ -213,11 +218,11 @@
     <EmbeddedResource Include="FormListaClientes.resx">
       <DependentUpon>FormListaClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaOfertas.resx">
-      <DependentUpon>FormListaOfertas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormListaContratos.resx">
       <DependentUpon>FormListaContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaOfertasEnProceso.resx">
+      <DependentUpon>FormListaOfertasEnProceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaVentaExterna.resx">
       <DependentUpon>FormListaVentaExterna.cs</DependentUpon>
@@ -250,6 +255,25 @@
     <EmbeddedResource Include="test\FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceVentas\COMPLETE_FLAT_UI.ServiceVentas.HistoricoEstadoVentas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVentas\COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVentas\COMPLETE_FLAT_UI.ServiceVentas.Ventas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVentas\FeriaVirtualServices.Structures.Tables.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceVentas\service.wsdl" />
+    <None Include="Connected Services\ServiceVentas\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceVentas\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioContratos\COMPLETE_FLAT_UI.ServicioContratos.Contratos.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -409,6 +433,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceVentas\" />
     <WCFMetadataStorage Include="Connected Services\ServicioContratos\" />
     <WCFMetadataStorage Include="Connected Services\ServicioOfertas\" />
     <WCFMetadataStorage Include="Connected Services\ServicioPerfiles\" />
@@ -461,6 +486,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServicioOfertas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVentas\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVentas\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVentas\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
