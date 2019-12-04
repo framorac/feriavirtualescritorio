@@ -116,6 +116,9 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FechaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -134,6 +137,19 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Activo {
+            get {
+                return this.ActivoField;
+            }
+            set {
+                if ((this.ActivoField.Equals(value) != true)) {
+                    this.ActivoField = value;
+                    this.RaisePropertyChanged("Activo");
+                }
             }
         }
         
@@ -347,6 +363,18 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompleta", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaResponse")]
         System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaAsync(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbierto", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbiertoResponse")]
+        COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoAbierto(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbierto", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbiertoResponse")]
+        System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoAbiertoAsync(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresada", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresadaResponse")]
+        COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoIngresada(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresada", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresadaResponse")]
+        System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoIngresadaAsync(int idTipoEstado, int idTipoVenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -422,6 +450,22 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         
         public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaAsync(int idTipoEstado, int idTipoVenta) {
             return base.Channel.GetVentaCompletaAsync(idTipoEstado, idTipoVenta);
+        }
+        
+        public COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoAbierto(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoAbierto(idTipoEstado, idTipoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoAbiertoAsync(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoAbiertoAsync(idTipoEstado, idTipoVenta);
+        }
+        
+        public COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoIngresada(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoIngresada(idTipoEstado, idTipoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoIngresadaAsync(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoIngresadaAsync(idTipoEstado, idTipoVenta);
         }
     }
 }

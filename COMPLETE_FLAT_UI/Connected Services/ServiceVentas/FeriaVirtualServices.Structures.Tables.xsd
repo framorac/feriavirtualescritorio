@@ -23,6 +23,7 @@
   <xs:element name="ArrayOfHistoricoEstadoVentas" nillable="true" type="tns:ArrayOfHistoricoEstadoVentas" />
   <xs:complexType name="HistoricoEstadoVentas">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Id_venta" type="xs:int" />
