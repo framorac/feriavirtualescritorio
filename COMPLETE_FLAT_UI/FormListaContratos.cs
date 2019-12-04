@@ -80,9 +80,20 @@ namespace COMPLETE_FLAT_UI
             frm.Show();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnRefrescar_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = servicioContrato.GetContratos().ToList();
+            dataGridView1.AutoGenerateColumns = false;
 
+            dataGridView1.Columns["id_contrato"].DisplayIndex = 0;
+            dataGridView1.Columns["id_usuario"].DisplayIndex = 1;
+            dataGridView1.Columns["fecha_inicio"].DisplayIndex = 2;
+            dataGridView1.Columns["fecha_termino"].DisplayIndex = 3;
+
+            dataGridView1.Columns[2].HeaderText = "ID";
+            dataGridView1.Columns[3].HeaderText = "ID Usuario";
+            dataGridView1.Columns[0].HeaderText = "Fecha Inicio";
+            dataGridView1.Columns[1].HeaderText = "Fecha Termino";
         }
     }
 }

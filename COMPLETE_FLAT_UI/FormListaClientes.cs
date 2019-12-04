@@ -100,5 +100,29 @@ namespace COMPLETE_FLAT_UI
             frm.ShowDialog();
             serviciosUsuarios.DeleteUsuario(ID);
         }
+
+        private void BtnRefrescar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = serviciosUsuarios.GetUsuarios().ToList();
+            dataGridView1.AutoGenerateColumns = false;
+
+            dataGridView1.Columns["id"].DisplayIndex = 0;
+            dataGridView1.Columns["Username"].DisplayIndex = 1;
+            dataGridView1.Columns["Email"].DisplayIndex = 2;
+            dataGridView1.Columns["Nombre"].DisplayIndex = 3;
+            dataGridView1.Columns["Apellido"].DisplayIndex = 4;
+            dataGridView1.Columns["Password"].DisplayIndex = 5;
+            dataGridView1.Columns["Perfil"].DisplayIndex = 6;
+            dataGridView1.Columns["FechaCreacion"].DisplayIndex = 7;
+
+            dataGridView1.Columns[7].HeaderText = "ID";
+            dataGridView1.Columns[6].HeaderText = "Usuario";
+            dataGridView1.Columns[3].HeaderText = "Nombre";
+            dataGridView1.Columns[0].HeaderText = "Apellido";
+            dataGridView1.Columns[1].HeaderText = "Correo";
+            dataGridView1.Columns[4].HeaderText = "Contraseña";
+            dataGridView1.Columns[5].HeaderText = "Perfil";
+            dataGridView1.Columns[2].HeaderText = "Fecha de creación";
+        }
     }
 }
