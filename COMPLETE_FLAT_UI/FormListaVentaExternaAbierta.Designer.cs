@@ -35,6 +35,7 @@
             this.btnCerrarProceso = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.Button();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaExternaAbierta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,17 +131,40 @@
             this.BtnCerrar.TabIndex = 23;
             this.BtnCerrar.UseVisualStyleBackColor = true;
             // 
-            // FormListaVentaAbierta
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnRefrescar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnRefrescar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnRefrescar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnRefrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefrescar.ForeColor = System.Drawing.Color.Silver;
+            this.btnRefrescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefrescar.Location = new System.Drawing.Point(1014, 203);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(133, 38);
+            this.btnRefrescar.TabIndex = 24;
+            this.btnRefrescar.Text = "Refrescar";
+            this.btnRefrescar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefrescar.UseVisualStyleBackColor = false;
+            this.btnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
+            // 
+            // FormListaVentaExternaAbierta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1160, 562);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCerrarProceso);
             this.Controls.Add(this.dgvVentaExternaAbierta);
-            this.Name = "FormListaVentaAbierta";
+            this.Name = "FormListaVentaExternaAbierta";
             this.Text = "FormListaVentaAbierta";
             this.Load += new System.EventHandler(this.FormListaVentaAbierta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaExternaAbierta)).EndInit();
@@ -155,5 +179,6 @@
         private System.Windows.Forms.Button btnCerrarProceso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnCerrar;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }
