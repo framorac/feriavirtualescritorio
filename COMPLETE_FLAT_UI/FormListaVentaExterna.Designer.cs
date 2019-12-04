@@ -89,7 +89,7 @@
             this.dgvSolicitudVentaExterna.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSolicitudVentaExterna.EnableHeadersVisualStyles = false;
             this.dgvSolicitudVentaExterna.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.dgvSolicitudVentaExterna.Location = new System.Drawing.Point(55, 61);
+            this.dgvSolicitudVentaExterna.Location = new System.Drawing.Point(55, 84);
             this.dgvSolicitudVentaExterna.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSolicitudVentaExterna.Name = "dgvSolicitudVentaExterna";
             this.dgvSolicitudVentaExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -104,14 +104,13 @@
             this.dgvSolicitudVentaExterna.RowHeadersWidth = 51;
             this.dgvSolicitudVentaExterna.Size = new System.Drawing.Size(939, 465);
             this.dgvSolicitudVentaExterna.TabIndex = 19;
-            
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(50, 28);
+            this.label1.Location = new System.Drawing.Point(50, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(277, 25);

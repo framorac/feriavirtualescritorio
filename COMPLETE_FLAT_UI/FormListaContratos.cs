@@ -79,5 +79,10 @@ namespace COMPLETE_FLAT_UI
             FormMantContrato frm = new FormMantContrato();
             frm.Show();
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

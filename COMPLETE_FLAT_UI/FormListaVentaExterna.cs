@@ -21,7 +21,7 @@ namespace COMPLETE_FLAT_UI
 
         private void FormListaVentaExterna_Load(object sender, EventArgs e)
         {
-            dgvSolicitudVentaExterna.DataSource = servicioVentas.GetVentaCompleta(6,2);
+            dgvSolicitudVentaExterna.DataSource = servicioVentas.GetVentaCompletaFiltradoIngresada(6,2);
             dgvSolicitudVentaExterna.AutoGenerateColumns = false;
 
             dgvSolicitudVentaExterna.Columns["Id"].DisplayIndex = 0;
@@ -48,9 +48,6 @@ namespace COMPLETE_FLAT_UI
             var mensaje = servicioVentas.UpdateVenta(1, Convert.ToInt32(dgvSolicitudVentaExterna.CurrentRow.Cells[2].Value.ToString()));
 
             MessageBox.Show(mensaje);
-            
-            
-
         }
 
     }

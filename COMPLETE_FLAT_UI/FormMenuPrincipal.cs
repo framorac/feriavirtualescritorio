@@ -222,7 +222,7 @@ namespace COMPLETE_FLAT_UI
 
         private void btnProcesoOferta_Click(object sender, EventArgs e)
         {
-            FormListaOfertasEnProceso fm = new FormListaOfertasEnProceso();
+            FormListaVentaExternaAbierta fm = new FormListaVentaExternaAbierta();
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(fm);
         }

@@ -43,6 +43,18 @@
   <wsdl:message name="IServiceVentas_GetVentaCompleta_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetVentaCompletaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoAbierto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoAbierto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoAbierto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoAbiertoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoIngresada_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoIngresada" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoIngresada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoIngresadaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceVentas">
     <wsdl:operation name="GetVentas">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentas" message="tns:IServiceVentas_GetVentas_InputMessage" />
@@ -67,6 +79,14 @@
     <wsdl:operation name="GetVentaCompleta">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompleta" message="tns:IServiceVentas_GetVentaCompleta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaResponse" message="tns:IServiceVentas_GetVentaCompleta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoAbierto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbierto" message="tns:IServiceVentas_GetVentaCompletaFiltradoAbierto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbiertoResponse" message="tns:IServiceVentas_GetVentaCompletaFiltradoAbierto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoIngresada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresada" message="tns:IServiceVentas_GetVentaCompletaFiltradoIngresada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresadaResponse" message="tns:IServiceVentas_GetVentaCompletaFiltradoIngresada_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceVentas" type="tns:IServiceVentas">
@@ -118,6 +138,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetVentaCompleta">
       <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompleta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoAbierto">
+      <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoAbierto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoIngresada">
+      <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresada" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

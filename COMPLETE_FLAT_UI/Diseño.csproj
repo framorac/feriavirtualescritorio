@@ -27,6 +27,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,10 +62,29 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Json.Net, Version=1.0.18.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json.Net.1.0.18\lib\netstandard2.0\Json.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Primitives, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.6.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +96,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ServiceVentas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioAcciones\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -147,11 +173,11 @@
     <Compile Include="FormListaContratos.Designer.cs">
       <DependentUpon>FormListaContratos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaOfertasEnProceso.cs">
+    <Compile Include="FormListaVentaExternaAbierta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaOfertasEnProceso.Designer.cs">
-      <DependentUpon>FormListaOfertasEnProceso.cs</DependentUpon>
+    <Compile Include="FormListaVentaExternaAbierta.Designer.cs">
+      <DependentUpon>FormListaVentaExternaAbierta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogo.cs">
       <SubType>Form</SubType>
@@ -221,8 +247,8 @@
     <EmbeddedResource Include="FormListaContratos.resx">
       <DependentUpon>FormListaContratos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaOfertasEnProceso.resx">
-      <DependentUpon>FormListaOfertasEnProceso.cs</DependentUpon>
+    <EmbeddedResource Include="FormListaVentaExternaAbierta.resx">
+      <DependentUpon>FormListaVentaExternaAbierta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaVentaExterna.resx">
       <DependentUpon>FormListaVentaExterna.cs</DependentUpon>
@@ -272,6 +298,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceVentas\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioAcciones\COMPLETE_FLAT_UI.ServicioAcciones.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioAcciones\FeriaVirtualServices.Structures.Tables.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioAcciones\service.wsdl" />
+    <None Include="Connected Services\ServicioAcciones\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioAcciones\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioContratos\COMPLETE_FLAT_UI.ServicioContratos.Contratos.datasource">
@@ -326,6 +365,7 @@
     <None Include="Connected Services\ServiciosUsuarios\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -434,6 +474,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceVentas\" />
+    <WCFMetadataStorage Include="Connected Services\ServicioAcciones\" />
     <WCFMetadataStorage Include="Connected Services\ServicioContratos\" />
     <WCFMetadataStorage Include="Connected Services\ServicioOfertas\" />
     <WCFMetadataStorage Include="Connected Services\ServicioPerfiles\" />
@@ -498,6 +539,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceVentas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioAcciones\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioAcciones\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioAcciones\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
