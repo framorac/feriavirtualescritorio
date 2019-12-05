@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace COMPLETE_FLAT_UI
 {
-    public partial class FormListaVentaExterna : Form
+    public partial class FormListaVentaExternaIngresada : Form
     {
         ServiceVentas.ServiceVentasClient servicioVentas = new ServiceVentas.ServiceVentasClient();
         
-        public FormListaVentaExterna()
+        public FormListaVentaExternaIngresada()
         {
             InitializeComponent();
         }

@@ -13,6 +13,7 @@ namespace COMPLETE_FLAT_UI
     public partial class FormElimCliente : Form
     {
         ServiciosUsuarios.UsuariosClient serviciosUsuarios = new ServiciosUsuarios.UsuariosClient();
+        ServiceVentas.ServiceVentasClient serviciosVentas = new ServiceVentas.ServiceVentasClient();
         public FormElimCliente()
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace COMPLETE_FLAT_UI
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            serviciosUsuarios.DeleteUsuario(Convert.ToInt32(txtID.Text));
+            var mensaje = serviciosUsuarios.DeleteUsuario(Convert.ToInt32(txtID.Text));
+            MessageBox.Show(mensaje);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

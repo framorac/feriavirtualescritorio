@@ -115,4 +115,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoEnSubasta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoEstado" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoVenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoEnSubastaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoEnSubastaResult" nillable="true" type="q6:ArrayOfVentaCompleta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

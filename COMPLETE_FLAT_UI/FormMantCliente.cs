@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,8 +62,32 @@ namespace COMPLETE_FLAT_UI
 
             if (ValidarFormularioVacio() == false)
             {
-                serviciosUsuarios.InsertUsuario(txtUsuario.Text, txtContraseña.Text, perfil.Id_perfil, txtNombre.Text, txtApellido.Text, txtCorreo.Text, DateTime.Now);
-                FormListaClientes fm = new FormListaClientes();
+                if (serviciosUsuarios.GetUsuarios().Where(x => x.Username.ToLower() == txtUsuario.Text.ToLower()).FirstOrDefault() != null && serviciosUsuarios.GetUsuarios().Where(x => x.Email.ToLower() == txtCorreo.Text.ToLower()).FirstOrDefault() != null)
+                {
+                    MessageBox.Show("Usuario y correo ya existen, por favor ingrese otro.");
+                }
+                else if (serviciosUsuarios.GetUsuarios().Where(x => x.Email.ToLower() == txtCorreo.Text.ToLower()).FirstOrDefault() != null)
+                {
+                    MessageBox.Show("El correo ingresado ya existe, por favor ingrese otro.");
+                }
+                else if (serviciosUsuarios.GetUsuarios().Where(x => x.Username.ToLower() == txtUsuario.Text.ToLower()).FirstOrDefault() != null)
+                {
+                    MessageBox.Show("El usuario ingresado ya existe, por favor ingrese otro.");
+                }
+                else
+                {
+                    if (ValidarEmail(txtCorreo.Text))
+                    {
+                        var mensaje = serviciosUsuarios.InsertUsuario(txtUsuario.Text, txtContraseña.Text, perfil.Id_perfil, txtNombre.Text, txtApellido.Text, txtCorreo.Text, DateTime.Now);
+                        MessageBox.Show(mensaje);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, valide que el formato de el mail sea correcto");
+                    }
+                    
+                }
+                
             }
             else
             {
@@ -84,6 +109,19 @@ namespace COMPLETE_FLAT_UI
             }
 
             return flag;
+        }
+
+        static bool ValidarEmail(string email)
+        {
+            try
+            {
+                new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }
