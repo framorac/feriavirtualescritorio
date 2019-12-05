@@ -375,6 +375,12 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresada", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoIngresadaResponse")]
         System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoIngresadaAsync(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubasta", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubastaResponse")]
+        COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoEnSubasta(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubasta", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubastaResponse")]
+        System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoEnSubastaAsync(int idTipoEstado, int idTipoVenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -466,6 +472,14 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         
         public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoIngresadaAsync(int idTipoEstado, int idTipoVenta) {
             return base.Channel.GetVentaCompletaFiltradoIngresadaAsync(idTipoEstado, idTipoVenta);
+        }
+        
+        public COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoEnSubasta(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoEnSubasta(idTipoEstado, idTipoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoEnSubastaAsync(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoEnSubastaAsync(idTipoEstado, idTipoVenta);
         }
     }
 }

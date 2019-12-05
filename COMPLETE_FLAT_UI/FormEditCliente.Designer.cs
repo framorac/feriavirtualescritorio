@@ -142,6 +142,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(169, 99);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(305, 26);
             this.txtUsuario.TabIndex = 27;
             // 
@@ -169,6 +170,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(169, 133);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ReadOnly = true;
             this.txtCorreo.Size = new System.Drawing.Size(305, 26);
             this.txtCorreo.TabIndex = 24;
             // 

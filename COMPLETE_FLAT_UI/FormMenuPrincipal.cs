@@ -215,7 +215,7 @@ namespace COMPLETE_FLAT_UI
 
         private void BtnVentaExterna_Click(object sender, EventArgs e)
         {
-            FormListaVentaExterna fm = new FormListaVentaExterna();
+            FormListaVentaExternaIngresada fm = new FormListaVentaExternaIngresada();
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(fm);
         }
@@ -227,9 +227,12 @@ namespace COMPLETE_FLAT_UI
             AbrirFormEnPanel(fm);
         }
 
-        private void PictureBox5_Click(object sender, EventArgs e)
-        {
 
+        private void BtnProcesoSubasta_Click(object sender, EventArgs e)
+        {
+            FormListaVentaExternaEnSubasta frm = new FormListaVentaExternaEnSubasta();
+            frm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(frm);
         }
 
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------

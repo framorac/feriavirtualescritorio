@@ -53,8 +53,9 @@ namespace COMPLETE_FLAT_UI
                     break;
             }
 
-            serviciosUsuarios.UpdateUsuario(Convert.ToInt32(txtID.Text), txtUsuario.Text, txtContraseña.Text, id, txtNombre.Text,
+            var mensaje = serviciosUsuarios.UpdateUsuario(Convert.ToInt32(txtID.Text), txtUsuario.Text, txtContraseña.Text, id, txtNombre.Text,
                                             txtApellido.Text, txtCorreo.Text, Convert.ToDateTime(txtFechaCreacion.Text));
+            MessageBox.Show(mensaje);
             
         }
 
