@@ -13,6 +13,7 @@ namespace SignUpDemo
 {
     public partial class Login : Form
     {
+        COMPLETE_FLAT_UI.ServiciosUsuarios.UsuariosClient serviciosUsuarios = new COMPLETE_FLAT_UI.ServiciosUsuarios.UsuariosClient();
         public Login()
         {
             InitializeComponent();
@@ -25,8 +26,6 @@ namespace SignUpDemo
 
         private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
-            COMPLETE_FLAT_UI.ServiciosUsuarios.UsuariosClient serviciosUsuarios = new COMPLETE_FLAT_UI.ServiciosUsuarios.UsuariosClient();
-
             try
             {
                 var resultado = serviciosUsuarios.Login(txtUsuario.Text, txtContrasena.Text);
@@ -63,7 +62,7 @@ namespace SignUpDemo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se ha podido conectar con el servidor, por favor, vuelva a intentarlo más tarde." + ex);
+                MessageBox.Show("No se ha podido conectar con el servidor, por favor, vuelva a intentarlo más tarde.");
             }
         }
     }
