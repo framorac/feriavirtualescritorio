@@ -36,6 +36,11 @@
             this.lbFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.PanelBarraTitulo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tmExpandirMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmContraerMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnProcesoSubasta = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -50,19 +55,15 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnNormal = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.tmExpandirMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmContraerMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
             this.panelContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +161,50 @@
             this.panelMenu.Size = new System.Drawing.Size(307, 685);
             this.panelMenu.TabIndex = 2;
             // 
+            // PanelBarraTitulo
+            // 
+            this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.PanelBarraTitulo.Controls.Add(this.pictureBox8);
+            this.PanelBarraTitulo.Controls.Add(this.label1);
+            this.PanelBarraTitulo.Controls.Add(this.btnNormal);
+            this.PanelBarraTitulo.Controls.Add(this.btnMinimizar);
+            this.PanelBarraTitulo.Controls.Add(this.btnMaximizar);
+            this.PanelBarraTitulo.Controls.Add(this.btnCerrar);
+            this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.PanelBarraTitulo.Name = "PanelBarraTitulo";
+            this.PanelBarraTitulo.Size = new System.Drawing.Size(1380, 53);
+            this.PanelBarraTitulo.TabIndex = 1;
+            this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(47, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "ADMINISTRADOR";
+            // 
+            // tmExpandirMenu
+            // 
+            this.tmExpandirMenu.Interval = 15;
+            this.tmExpandirMenu.Tick += new System.EventHandler(this.tmExpandirMenu_Tick);
+            // 
+            // tmContraerMenu
+            // 
+            this.tmContraerMenu.Interval = 15;
+            this.tmContraerMenu.Tick += new System.EventHandler(this.tmContraerMenu_Tick);
+            // 
+            // tmFechaHora
+            // 
+            this.tmFechaHora.Enabled = true;
+            this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
+            // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
@@ -180,15 +224,14 @@
             this.btnProcesoSubasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcesoSubasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcesoSubasta.ForeColor = System.Drawing.Color.Silver;
-            this.btnProcesoSubasta.Image = ((System.Drawing.Image)(resources.GetObject("btnProcesoSubasta.Image")));
+            this.btnProcesoSubasta.Image = global::COMPLETE_FLAT_UI.Properties.Resources.subasta;
             this.btnProcesoSubasta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProcesoSubasta.Location = new System.Drawing.Point(0, 382);
             this.btnProcesoSubasta.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcesoSubasta.Name = "btnProcesoSubasta";
             this.btnProcesoSubasta.Size = new System.Drawing.Size(307, 49);
             this.btnProcesoSubasta.TabIndex = 20;
-            this.btnProcesoSubasta.Text = "En proceso de subasta";
-            this.btnProcesoSubasta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProcesoSubasta.Text = "Ventas en subasta";
             this.btnProcesoSubasta.UseVisualStyleBackColor = true;
             this.btnProcesoSubasta.Click += new System.EventHandler(this.BtnProcesoSubasta_Click);
             // 
@@ -221,15 +264,14 @@
             this.btnProcesoOferta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcesoOferta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcesoOferta.ForeColor = System.Drawing.Color.Silver;
-            this.btnProcesoOferta.Image = ((System.Drawing.Image)(resources.GetObject("btnProcesoOferta.Image")));
+            this.btnProcesoOferta.Image = global::COMPLETE_FLAT_UI.Properties.Resources.productores;
             this.btnProcesoOferta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProcesoOferta.Location = new System.Drawing.Point(0, 325);
             this.btnProcesoOferta.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcesoOferta.Name = "btnProcesoOferta";
             this.btnProcesoOferta.Size = new System.Drawing.Size(307, 49);
             this.btnProcesoOferta.TabIndex = 17;
-            this.btnProcesoOferta.Text = "En proceso de ofertas";
-            this.btnProcesoOferta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProcesoOferta.Text = "Ventas en oferta";
             this.btnProcesoOferta.UseVisualStyleBackColor = true;
             this.btnProcesoOferta.Click += new System.EventHandler(this.btnProcesoOferta_Click);
             // 
@@ -242,15 +284,14 @@
             this.btnVentaExterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentaExterna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentaExterna.ForeColor = System.Drawing.Color.Silver;
-            this.btnVentaExterna.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaExterna.Image")));
+            this.btnVentaExterna.Image = global::COMPLETE_FLAT_UI.Properties.Resources.manzana;
             this.btnVentaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaExterna.Location = new System.Drawing.Point(0, 268);
+            this.btnVentaExterna.Location = new System.Drawing.Point(0, 269);
             this.btnVentaExterna.Margin = new System.Windows.Forms.Padding(4);
             this.btnVentaExterna.Name = "btnVentaExterna";
             this.btnVentaExterna.Size = new System.Drawing.Size(307, 49);
             this.btnVentaExterna.TabIndex = 16;
-            this.btnVentaExterna.Text = "Solicitudes de venta externa";
-            this.btnVentaExterna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentaExterna.Text = "Solicitudes";
             this.btnVentaExterna.UseVisualStyleBackColor = true;
             this.btnVentaExterna.Click += new System.EventHandler(this.BtnVentaExterna_Click);
             // 
@@ -273,7 +314,7 @@
             this.btnContratos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContratos.ForeColor = System.Drawing.Color.Silver;
-            this.btnContratos.Image = ((System.Drawing.Image)(resources.GetObject("btnContratos.Image")));
+            this.btnContratos.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Contrato;
             this.btnContratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnContratos.Location = new System.Drawing.Point(0, 212);
             this.btnContratos.Margin = new System.Windows.Forms.Padding(4);
@@ -281,7 +322,6 @@
             this.btnContratos.Size = new System.Drawing.Size(307, 49);
             this.btnContratos.TabIndex = 14;
             this.btnContratos.Text = "Contratos";
-            this.btnContratos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnContratos.UseVisualStyleBackColor = true;
             this.btnContratos.Click += new System.EventHandler(this.BtnContratos_Click);
             // 
@@ -339,7 +379,6 @@
             this.btnClientes.Size = new System.Drawing.Size(307, 49);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnListaClientes_Click);
             // 
@@ -370,27 +409,8 @@
             this.button1.Size = new System.Drawing.Size(307, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // PanelBarraTitulo
-            // 
-            this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.PanelBarraTitulo.Controls.Add(this.pictureBox8);
-            this.PanelBarraTitulo.Controls.Add(this.label1);
-            this.PanelBarraTitulo.Controls.Add(this.btnNormal);
-            this.PanelBarraTitulo.Controls.Add(this.btnMinimizar);
-            this.PanelBarraTitulo.Controls.Add(this.btnMaximizar);
-            this.PanelBarraTitulo.Controls.Add(this.btnCerrar);
-            this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
-            this.PanelBarraTitulo.Name = "PanelBarraTitulo";
-            this.PanelBarraTitulo.Size = new System.Drawing.Size(1380, 53);
-            this.PanelBarraTitulo.TabIndex = 1;
-            this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
             // pictureBox8
             // 
@@ -402,18 +422,6 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 5;
             this.pictureBox8.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "ADMINISTRADOR";
             // 
             // btnNormal
             // 
@@ -476,21 +484,6 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // tmExpandirMenu
-            // 
-            this.tmExpandirMenu.Interval = 15;
-            this.tmExpandirMenu.Tick += new System.EventHandler(this.tmExpandirMenu_Tick);
-            // 
-            // tmContraerMenu
-            // 
-            this.tmContraerMenu.Interval = 15;
-            this.tmContraerMenu.Tick += new System.EventHandler(this.tmContraerMenu_Tick);
-            // 
-            // tmFechaHora
-            // 
-            this.tmFechaHora.Enabled = true;
-            this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
-            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -511,6 +504,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelMenu.ResumeLayout(false);
+            this.PanelBarraTitulo.ResumeLayout(false);
+            this.PanelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -519,8 +514,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PanelBarraTitulo.ResumeLayout(false);
-            this.PanelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
