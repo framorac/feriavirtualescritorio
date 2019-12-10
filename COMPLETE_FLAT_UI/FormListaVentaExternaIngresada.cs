@@ -36,6 +36,22 @@ namespace COMPLETE_FLAT_UI
             dgvSolicitudVentaExterna.Columns[2].HeaderText = "ID de la venta";
             dgvSolicitudVentaExterna.Columns[3].HeaderText = "Nombre del cliente";
             dgvSolicitudVentaExterna.Columns[4].HeaderText = "Tipo de venta";
+
+            dgvVentaInterna.DataSource = servicioVentas.GetVentaCompletaFiltradoIngresada(6, 1);
+            dgvVentaInterna.AutoGenerateColumns = false;
+
+            dgvVentaInterna.Columns["Id"].DisplayIndex = 0;
+            dgvVentaInterna.Columns["NombreApellido"].DisplayIndex = 1;
+            dgvVentaInterna.Columns["Tipo"].DisplayIndex = 2;
+            dgvVentaInterna.Columns["Estado"].DisplayIndex = 3;
+            dgvVentaInterna.Columns["Fecha"].DisplayIndex = 4;
+
+
+            dgvVentaInterna.Columns[0].HeaderText = "Estado de la venta";
+            dgvVentaInterna.Columns[1].HeaderText = "Fecha de la venta";
+            dgvVentaInterna.Columns[2].HeaderText = "ID de la venta";
+            dgvVentaInterna.Columns[3].HeaderText = "Nombre del cliente";
+            dgvVentaInterna.Columns[4].HeaderText = "Tipo de venta";
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -45,7 +61,7 @@ namespace COMPLETE_FLAT_UI
 
         private void BtnPublicar_Click(object sender, EventArgs e)
         {
-            var mensaje = servicioVentas.UpdateVenta(1, Convert.ToInt32(dgvSolicitudVentaExterna.CurrentRow.Cells[2].Value.ToString()));
+            var mensaje = servicioVentas.UpdateVenta(1, Convert.ToInt32(dgvSolicitudVentaExterna.CurrentRow.Cells[2].Value.ToString()),'0');
 
             MessageBox.Show(mensaje);
         }
@@ -67,6 +83,32 @@ namespace COMPLETE_FLAT_UI
             dgvSolicitudVentaExterna.Columns[2].HeaderText = "ID de la venta";
             dgvSolicitudVentaExterna.Columns[3].HeaderText = "Nombre del cliente";
             dgvSolicitudVentaExterna.Columns[4].HeaderText = "Tipo de venta";
+        }
+
+        private void BtnPublicarVentaInterna_Click(object sender, EventArgs e)
+        {
+            var mensaje = servicioVentas.UpdateVenta(1, Convert.ToInt32(dgvVentaInterna.CurrentRow.Cells[2].Value.ToString()), '0');
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void BtnRefrescarVentaInterna_Click(object sender, EventArgs e)
+        {
+            dgvVentaInterna.DataSource = servicioVentas.GetVentaCompletaFiltradoIngresada(6, 1);
+            dgvVentaInterna.AutoGenerateColumns = false;
+
+            dgvVentaInterna.Columns["Id"].DisplayIndex = 0;
+            dgvVentaInterna.Columns["NombreApellido"].DisplayIndex = 1;
+            dgvVentaInterna.Columns["Tipo"].DisplayIndex = 2;
+            dgvVentaInterna.Columns["Estado"].DisplayIndex = 3;
+            dgvVentaInterna.Columns["Fecha"].DisplayIndex = 4;
+
+
+            dgvVentaInterna.Columns[0].HeaderText = "Estado de la venta";
+            dgvVentaInterna.Columns[1].HeaderText = "Fecha de la venta";
+            dgvVentaInterna.Columns[2].HeaderText = "ID de la venta";
+            dgvVentaInterna.Columns[3].HeaderText = "Nombre del cliente";
+            dgvVentaInterna.Columns[4].HeaderText = "Tipo de venta";
         }
     }
 }

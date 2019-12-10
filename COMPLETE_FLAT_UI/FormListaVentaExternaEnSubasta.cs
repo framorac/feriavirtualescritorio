@@ -26,7 +26,7 @@ namespace COMPLETE_FLAT_UI
 
         private void BtnRefrescar_Click(object sender, EventArgs e)
         {
-            dgvSubastaTransporte.DataSource = servicioVentas.GetVentaCompletaFiltradoEnSubasta(6, 1).ToList();
+            dgvSubastaTransporte.DataSource = servicioVentas.GetVentaCompletaFiltradoEnSubasta(6, 2).ToList();
 
             dgvSubastaTransporte.Columns["Id"].DisplayIndex = 0;
             dgvSubastaTransporte.Columns["NombreApellido"].DisplayIndex = 1;
@@ -43,7 +43,7 @@ namespace COMPLETE_FLAT_UI
 
         private void FormListaVentaExternaEnSubasta_Load(object sender, EventArgs e)
         {
-            dgvSubastaTransporte.DataSource = servicioVentas.GetVentaCompletaFiltradoEnSubasta(6, 1).ToList();
+            dgvSubastaTransporte.DataSource = servicioVentas.GetVentaCompletaFiltradoEnSubasta(6, 2).ToList();
 
             dgvSubastaTransporte.Columns["Id"].DisplayIndex = 0;
             dgvSubastaTransporte.Columns["NombreApellido"].DisplayIndex = 1;

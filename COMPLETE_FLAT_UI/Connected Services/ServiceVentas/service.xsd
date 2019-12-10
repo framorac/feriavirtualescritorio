@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="GetVentas">
     <xs:complexType>
       <xs:sequence />
@@ -48,6 +49,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="id_estado" type="xs:int" />
         <xs:element minOccurs="0" name="id_venta" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="isLocal" type="q2:char" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +68,7 @@
   <xs:element name="GetHistóricoEstadoVentasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetHistóricoEstadoVentasResult" nillable="true" type="q2:ArrayOfHistoricoEstadoVentas" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetHistóricoEstadoVentasResult" nillable="true" type="q3:ArrayOfHistoricoEstadoVentas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +83,7 @@
   <xs:element name="GetVentaCompletaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaResult" nillable="true" type="q3:ArrayOfVentaCompleta" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaResult" nillable="true" type="q4:ArrayOfVentaCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -96,7 +98,7 @@
   <xs:element name="GetVentaCompletaFiltradoAbiertoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoAbiertoResult" nillable="true" type="q4:ArrayOfVentaCompleta" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoAbiertoResult" nillable="true" type="q5:ArrayOfVentaCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -111,7 +113,7 @@
   <xs:element name="GetVentaCompletaFiltradoIngresadaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoIngresadaResult" nillable="true" type="q5:ArrayOfVentaCompleta" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoIngresadaResult" nillable="true" type="q6:ArrayOfVentaCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -126,7 +128,52 @@
   <xs:element name="GetVentaCompletaFiltradoEnSubastaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoEnSubastaResult" nillable="true" type="q6:ArrayOfVentaCompleta" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoEnSubastaResult" nillable="true" type="q7:ArrayOfVentaCompleta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoEnCamino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoEstado" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoVenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoEnCaminoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoEnCaminoResult" nillable="true" type="q8:ArrayOfVentaCompleta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoRecepcionado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoEstado" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoVenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoRecepcionadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoRecepcionadoResult" nillable="true" type="q9:ArrayOfVentaCompleta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoFinalizada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoEstado" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoVenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVentaCompletaFiltradoFinalizadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FeriaVirtualServices.Structures.Tables" minOccurs="0" name="GetVentaCompletaFiltradoFinalizadaResult" nillable="true" type="q10:ArrayOfVentaCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

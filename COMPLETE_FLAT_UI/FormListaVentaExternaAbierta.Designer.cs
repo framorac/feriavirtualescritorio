@@ -31,12 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVentaExternaAbierta = new System.Windows.Forms.DataGridView();
             this.btnCerrarProceso = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
+            this.dgvVentaInternaAbierta = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaExternaAbierta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaInternaAbierta)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVentaExternaAbierta
@@ -81,7 +87,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVentaExternaAbierta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVentaExternaAbierta.RowHeadersWidth = 51;
-            this.dgvVentaExternaAbierta.Size = new System.Drawing.Size(939, 465);
+            this.dgvVentaExternaAbierta.Size = new System.Drawing.Size(939, 202);
             this.dgvVentaExternaAbierta.TabIndex = 20;
             // 
             // btnCerrarProceso
@@ -114,9 +120,9 @@
             this.label1.Location = new System.Drawing.Point(46, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(532, 25);
+            this.label1.Size = new System.Drawing.Size(309, 25);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Ventas en estado abierto para ser ofertadas por productores";
+            this.label1.Text = "Ventas externas en estado abierto";
             // 
             // BtnCerrar
             // 
@@ -130,6 +136,7 @@
             this.BtnCerrar.Size = new System.Drawing.Size(57, 53);
             this.BtnCerrar.TabIndex = 23;
             this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // btnRefrescar
             // 
@@ -153,12 +160,71 @@
             this.btnRefrescar.UseVisualStyleBackColor = false;
             this.btnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
             // 
+            // dgvVentaInternaAbierta
+            // 
+            this.dgvVentaInternaAbierta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVentaInternaAbierta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvVentaInternaAbierta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            this.dgvVentaInternaAbierta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvVentaInternaAbierta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvVentaInternaAbierta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentaInternaAbierta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVentaInternaAbierta.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentaInternaAbierta.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvVentaInternaAbierta.EnableHeadersVisualStyles = false;
+            this.dgvVentaInternaAbierta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.dgvVentaInternaAbierta.Location = new System.Drawing.Point(51, 347);
+            this.dgvVentaInternaAbierta.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvVentaInternaAbierta.Name = "dgvVentaInternaAbierta";
+            this.dgvVentaInternaAbierta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentaInternaAbierta.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvVentaInternaAbierta.RowHeadersWidth = 51;
+            this.dgvVentaInternaAbierta.Size = new System.Drawing.Size(939, 202);
+            this.dgvVentaInternaAbierta.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(46, 308);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 25);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Ventas internas en estado abierto";
+            // 
             // FormListaVentaExternaAbierta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1160, 562);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgvVentaInternaAbierta);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.label1);
@@ -168,6 +234,7 @@
             this.Text = "FormListaVentaAbierta";
             this.Load += new System.EventHandler(this.FormListaVentaAbierta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaExternaAbierta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaInternaAbierta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +247,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.DataGridView dgvVentaInternaAbierta;
+        private System.Windows.Forms.Label label2;
     }
 }

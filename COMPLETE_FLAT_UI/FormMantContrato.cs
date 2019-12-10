@@ -48,18 +48,8 @@ namespace COMPLETE_FLAT_UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var resultado = serviciosUsuarios.GetUsuarios().Where(x => x.id == Convert.ToInt32(txtUsuario.Text)).FirstOrDefault();
-
-            if (resultado.Perfil.ToLower().Equals("cliente externo"))
-            {
-                var mensaje = servicesContratos.InsertContrato(Convert.ToInt32(txtUsuario.Text), Convert.ToDateTime(dtpFechaInicio.Value.ToString("dd/MM/yyyy")), Convert.ToDateTime(dtpFechaFin.Value.ToString("dd/MM/yyyy")));
-                MessageBox.Show(mensaje);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, los contratos solo pueden realizarse con perfiles de tipo cliente externo.");
-            }
-            
+            var mensaje = servicesContratos.InsertContrato(Convert.ToInt32(txtUsuario.Text), Convert.ToDateTime(dtpFechaInicio.Value.ToString("dd/MM/yyyy")), Convert.ToDateTime(dtpFechaFin.Value.ToString("dd/MM/yyyy")));
+            MessageBox.Show(mensaje);
         }
     }
 }

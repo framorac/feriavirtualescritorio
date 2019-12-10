@@ -185,6 +185,12 @@ namespace COMPLETE_FLAT_UI.ServicioAcciones {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAcciones/AdjudicarTransportista", ReplyAction="http://tempuri.org/IServiceAcciones/AdjudicarTransportistaResponse")]
         System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServicioAcciones.Usuario> AdjudicarTransportistaAsync(int idVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAcciones/ComenzarProcesoLocal", ReplyAction="http://tempuri.org/IServiceAcciones/ComenzarProcesoLocalResponse")]
+        string ComenzarProcesoLocal(int idVentaFinalizada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAcciones/ComenzarProcesoLocal", ReplyAction="http://tempuri.org/IServiceAcciones/ComenzarProcesoLocalResponse")]
+        System.Threading.Tasks.Task<string> ComenzarProcesoLocalAsync(int idVentaFinalizada);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -228,6 +234,14 @@ namespace COMPLETE_FLAT_UI.ServicioAcciones {
         
         public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServicioAcciones.Usuario> AdjudicarTransportistaAsync(int idVenta) {
             return base.Channel.AdjudicarTransportistaAsync(idVenta);
+        }
+        
+        public string ComenzarProcesoLocal(int idVentaFinalizada) {
+            return base.Channel.ComenzarProcesoLocal(idVentaFinalizada);
+        }
+        
+        public System.Threading.Tasks.Task<string> ComenzarProcesoLocalAsync(int idVentaFinalizada) {
+            return base.Channel.ComenzarProcesoLocalAsync(idVentaFinalizada);
         }
     }
 }

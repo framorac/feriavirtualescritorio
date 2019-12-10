@@ -40,9 +40,9 @@ namespace COMPLETE_FLAT_UI
             dataGridView1.Columns["fecha_termino"].DisplayIndex = 3;
 
             dataGridView1.Columns[2].HeaderText = "ID";
-            dataGridView1.Columns[3].HeaderText = "ID Usuario";
-            dataGridView1.Columns[0].HeaderText = "Fecha Inicio";
-            dataGridView1.Columns[1].HeaderText = "Fecha Termino";
+            dataGridView1.Columns[3].HeaderText = "ID usuario";
+            dataGridView1.Columns[0].HeaderText = "Fecha inicio";
+            dataGridView1.Columns[1].HeaderText = "Fecha término";
         }
 
         private void BtnEliminarContrato_Click(object sender, EventArgs e)

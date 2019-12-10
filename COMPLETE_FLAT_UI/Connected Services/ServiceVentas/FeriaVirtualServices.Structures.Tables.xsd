@@ -27,6 +27,7 @@
       <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Id_venta" type="xs:int" />
+      <xs:element minOccurs="0" name="Islocal" type="xs:boolean" />
       <xs:element minOccurs="0" name="TipoEstado" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
