@@ -36,6 +36,22 @@ namespace COMPLETE_FLAT_UI
             dgvVentaExternaAbierta.Columns[2].HeaderText = "ID de la venta";
             dgvVentaExternaAbierta.Columns[3].HeaderText = "Nombre del cliente";
             dgvVentaExternaAbierta.Columns[4].HeaderText = "Tipo de venta";
+
+            dgvVentaInternaAbierta.DataSource = servicioVentas.GetVentaCompletaFiltradoAbierto(6, 1).ToList();
+
+            dgvVentaInternaAbierta.Columns["Id"].DisplayIndex = 0;
+
+            dgvVentaInternaAbierta.Columns["NombreApellido"].DisplayIndex = 1;
+            dgvVentaInternaAbierta.Columns["Tipo"].DisplayIndex = 2;
+            dgvVentaInternaAbierta.Columns["Estado"].DisplayIndex = 3;
+            dgvVentaInternaAbierta.Columns["Fecha"].DisplayIndex = 4;
+
+
+            dgvVentaInternaAbierta.Columns[0].HeaderText = "Estado de la venta";
+            dgvVentaInternaAbierta.Columns[1].HeaderText = "Fecha de la venta";
+            dgvVentaInternaAbierta.Columns[2].HeaderText = "ID de la venta";
+            dgvVentaInternaAbierta.Columns[3].HeaderText = "Nombre del cliente";
+            dgvVentaInternaAbierta.Columns[4].HeaderText = "Tipo de venta";
         }
 
      
@@ -62,6 +78,11 @@ namespace COMPLETE_FLAT_UI
             dgvVentaExternaAbierta.Columns[2].HeaderText = "ID de la venta";
             dgvVentaExternaAbierta.Columns[3].HeaderText = "Nombre del cliente";
             dgvVentaExternaAbierta.Columns[4].HeaderText = "Tipo de venta";
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

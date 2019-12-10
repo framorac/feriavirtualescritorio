@@ -61,6 +61,24 @@
   <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoEnSubasta_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoEnSubastaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoEnCamino_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoEnCamino" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoEnCamino_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoEnCaminoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoRecepcionado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoRecepcionado" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoRecepcionado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoRecepcionadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoFinalizada_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoFinalizada" />
+  </wsdl:message>
+  <wsdl:message name="IServiceVentas_GetVentaCompletaFiltradoFinalizada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentaCompletaFiltradoFinalizadaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceVentas">
     <wsdl:operation name="GetVentas">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentas" message="tns:IServiceVentas_GetVentas_InputMessage" />
@@ -97,6 +115,18 @@
     <wsdl:operation name="GetVentaCompletaFiltradoEnSubasta">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubasta" message="tns:IServiceVentas_GetVentaCompletaFiltradoEnSubasta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubastaResponse" message="tns:IServiceVentas_GetVentaCompletaFiltradoEnSubasta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoEnCamino">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCamino" message="tns:IServiceVentas_GetVentaCompletaFiltradoEnCamino_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCaminoResponse" message="tns:IServiceVentas_GetVentaCompletaFiltradoEnCamino_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoRecepcionado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionado" message="tns:IServiceVentas_GetVentaCompletaFiltradoRecepcionado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionadoResponse" message="tns:IServiceVentas_GetVentaCompletaFiltradoRecepcionado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoFinalizada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizada" message="tns:IServiceVentas_GetVentaCompletaFiltradoFinalizada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizadaResponse" message="tns:IServiceVentas_GetVentaCompletaFiltradoFinalizada_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceVentas" type="tns:IServiceVentas">
@@ -175,6 +205,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetVentaCompletaFiltradoEnSubasta">
       <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubasta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoEnCamino">
+      <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCamino" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoRecepcionado">
+      <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaCompletaFiltradoFinalizada">
+      <soap:operation soapAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizada" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

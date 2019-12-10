@@ -208,7 +208,7 @@ namespace COMPLETE_FLAT_UI
             AbrirFormEnPanel(fm);
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnDashboard_Click(object sender, EventArgs e)
         {
            
         }
@@ -231,6 +231,27 @@ namespace COMPLETE_FLAT_UI
         private void BtnProcesoSubasta_Click(object sender, EventArgs e)
         {
             FormListaVentaExternaEnSubasta frm = new FormListaVentaExternaEnSubasta();
+            frm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(frm);
+        }
+
+        private void BtnVentaEnCamino_Click(object sender, EventArgs e)
+        {
+            FormListaVentaExternaEnCamino frm = new FormListaVentaExternaEnCamino();
+            frm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(frm);
+        }
+
+        private void BtnVentasFinalizadas_Click(object sender, EventArgs e)
+        {
+            FormListaVentaExternaFinalizada frm = new FormListaVentaExternaFinalizada();
+            frm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(frm);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FormListaVentaExternaRecepcionado frm = new FormListaVentaExternaRecepcionado();
             frm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(frm);
         }

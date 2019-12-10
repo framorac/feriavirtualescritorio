@@ -32,7 +32,8 @@ namespace COMPLETE_FLAT_UI
         {
             try
             {
-                servicioContratos.UpdateVenta(Convert.ToInt32(txtUsuario.Text), Convert.ToDateTime(dtpFechaInicio.Value.ToString("dd/MM/yyyy")), Convert.ToDateTime(dtpFechaFin.Value.ToString("dd/MM/yyyy")));
+                var mensaje = servicioContratos.UpdateVenta(Convert.ToInt32(txtUsuario.Text), Convert.ToDateTime(dtpFechaInicio.Value.ToString("dd/MM/yyyy")), Convert.ToDateTime(dtpFechaFin.Value.ToString("dd/MM/yyyy")));
+                MessageBox.Show(mensaje);
             }
             catch (Exception)
             {

@@ -179,11 +179,29 @@
     <Compile Include="FormListaVentaExternaAbierta.Designer.cs">
       <DependentUpon>FormListaVentaExternaAbierta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListaVentaExternaEnCamino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaVentaExternaEnCamino.Designer.cs">
+      <DependentUpon>FormListaVentaExternaEnCamino.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaVentaExternaEnSubasta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListaVentaExternaEnSubasta.Designer.cs">
       <DependentUpon>FormListaVentaExternaEnSubasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaVentaExternaFinalizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaVentaExternaFinalizada.Designer.cs">
+      <DependentUpon>FormListaVentaExternaFinalizada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaVentaExternaRecepcionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaVentaExternaRecepcionado.Designer.cs">
+      <DependentUpon>FormListaVentaExternaRecepcionado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogo.cs">
       <SubType>Form</SubType>
@@ -256,11 +274,20 @@
     <EmbeddedResource Include="FormListaVentaExternaAbierta.resx">
       <DependentUpon>FormListaVentaExternaAbierta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormListaVentaExternaEnCamino.resx">
+      <DependentUpon>FormListaVentaExternaEnCamino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListaVentaExternaEnSubasta.resx">
       <DependentUpon>FormListaVentaExternaEnSubasta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaVentaExternaIngresada.resx">
       <DependentUpon>FormListaVentaExternaIngresada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaVentaExternaFinalizada.resx">
+      <DependentUpon>FormListaVentaExternaFinalizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaVentaExternaRecepcionado.resx">
+      <DependentUpon>FormListaVentaExternaRecepcionado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogo.resx">
       <DependentUpon>FormLogo.cs</DependentUpon>

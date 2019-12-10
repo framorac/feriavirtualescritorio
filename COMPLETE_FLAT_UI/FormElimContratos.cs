@@ -20,7 +20,8 @@ namespace COMPLETE_FLAT_UI
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            serviciosContratos.DeleteContrato(Convert.ToInt32(txtID.Text));
+            var mensaje = serviciosContratos.DeleteContrato(Convert.ToInt32(txtID.Text));
+            MessageBox.Show(mensaje);
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)

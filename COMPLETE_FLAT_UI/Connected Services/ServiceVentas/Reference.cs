@@ -128,6 +128,9 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         private int Id_ventaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IslocalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TipoEstadoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -188,6 +191,19 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
                 if ((this.Id_ventaField.Equals(value) != true)) {
                     this.Id_ventaField = value;
                     this.RaisePropertyChanged("Id_venta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Islocal {
+            get {
+                return this.IslocalField;
+            }
+            set {
+                if ((this.IslocalField.Equals(value) != true)) {
+                    this.IslocalField = value;
+                    this.RaisePropertyChanged("Islocal");
                 }
             }
         }
@@ -347,10 +363,10 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         System.Threading.Tasks.Task<string> DeleteVentaAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/UpdateVenta", ReplyAction="http://tempuri.org/IServiceVentas/UpdateVentaResponse")]
-        string UpdateVenta(int id_estado, int id_venta);
+        string UpdateVenta(int id_estado, int id_venta, char isLocal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/UpdateVenta", ReplyAction="http://tempuri.org/IServiceVentas/UpdateVentaResponse")]
-        System.Threading.Tasks.Task<string> UpdateVentaAsync(int id_estado, int id_venta);
+        System.Threading.Tasks.Task<string> UpdateVentaAsync(int id_estado, int id_venta, char isLocal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetHistóricoEstadoVentas", ReplyAction="http://tempuri.org/IServiceVentas/GetHistóricoEstadoVentasResponse")]
         COMPLETE_FLAT_UI.ServiceVentas.HistoricoEstadoVentas[] GetHistóricoEstadoVentas();
@@ -381,6 +397,24 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubasta", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnSubastaResponse")]
         System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoEnSubastaAsync(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCamino", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCaminoResponse")]
+        COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoEnCamino(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCamino", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoEnCaminoResponse")]
+        System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoEnCaminoAsync(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionado", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionadoResponse")]
+        COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoRecepcionado(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionado", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoRecepcionadoResponse")]
+        System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoRecepcionadoAsync(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizada", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizadaResponse")]
+        COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoFinalizada(int idTipoEstado, int idTipoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizada", ReplyAction="http://tempuri.org/IServiceVentas/GetVentaCompletaFiltradoFinalizadaResponse")]
+        System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoFinalizadaAsync(int idTipoEstado, int idTipoVenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -434,12 +468,12 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
             return base.Channel.DeleteVentaAsync(id);
         }
         
-        public string UpdateVenta(int id_estado, int id_venta) {
-            return base.Channel.UpdateVenta(id_estado, id_venta);
+        public string UpdateVenta(int id_estado, int id_venta, char isLocal) {
+            return base.Channel.UpdateVenta(id_estado, id_venta, isLocal);
         }
         
-        public System.Threading.Tasks.Task<string> UpdateVentaAsync(int id_estado, int id_venta) {
-            return base.Channel.UpdateVentaAsync(id_estado, id_venta);
+        public System.Threading.Tasks.Task<string> UpdateVentaAsync(int id_estado, int id_venta, char isLocal) {
+            return base.Channel.UpdateVentaAsync(id_estado, id_venta, isLocal);
         }
         
         public COMPLETE_FLAT_UI.ServiceVentas.HistoricoEstadoVentas[] GetHistóricoEstadoVentas() {
@@ -480,6 +514,30 @@ namespace COMPLETE_FLAT_UI.ServiceVentas {
         
         public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoEnSubastaAsync(int idTipoEstado, int idTipoVenta) {
             return base.Channel.GetVentaCompletaFiltradoEnSubastaAsync(idTipoEstado, idTipoVenta);
+        }
+        
+        public COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoEnCamino(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoEnCamino(idTipoEstado, idTipoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoEnCaminoAsync(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoEnCaminoAsync(idTipoEstado, idTipoVenta);
+        }
+        
+        public COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoRecepcionado(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoRecepcionado(idTipoEstado, idTipoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoRecepcionadoAsync(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoRecepcionadoAsync(idTipoEstado, idTipoVenta);
+        }
+        
+        public COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[] GetVentaCompletaFiltradoFinalizada(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoFinalizada(idTipoEstado, idTipoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<COMPLETE_FLAT_UI.ServiceVentas.VentaCompleta[]> GetVentaCompletaFiltradoFinalizadaAsync(int idTipoEstado, int idTipoVenta) {
+            return base.Channel.GetVentaCompletaFiltradoFinalizadaAsync(idTipoEstado, idTipoVenta);
         }
     }
 }
